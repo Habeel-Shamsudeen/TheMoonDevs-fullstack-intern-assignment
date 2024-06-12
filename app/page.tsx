@@ -9,7 +9,7 @@ import Cookies from "js-cookie";
 import toast from 'react-hot-toast';
 
 const HomePage = () => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername]= useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
   const user = useAuthSession();
@@ -25,7 +25,6 @@ const HomePage = () => {
       dispatch(setToken(token));
       toast.success("Login successful");
     } catch (error) {
-      console.error("Login failed:", error);
       toast.error("Invalid Credentials. Please try again.");
     }
   };
